@@ -1,11 +1,17 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import bgImage from "../assets/Info.png"; // Import the background image
+import bgImage from "../assets/Info.png";
+import { useForm } from "react-hook-form";
 
 const PersonalInfo = () => {
+  const { register, handleSubmit, errors } = useForm();
+  const onSubmit = (data) => {
+    alert(JSON.stringify(data));
+  };
+
   return (
     <div
-      className="w-3/5 h-screen flex flex-col justify-center items-center"
+      className="w-full min-h-screen flex flex-col justify-center items-center"
       style={{
         backgroundImage: `url(${bgImage})`,
         backgroundSize: "cover",
@@ -13,88 +19,105 @@ const PersonalInfo = () => {
         backgroundPositionY: "0px",
       }}
     >
-      <h1 className="font-roboto text-xl font-bold text-white ml-24 mt-24 mb-8">
+      <h1 className="font-roboto text-xl font-bold text-white mt-10 mb-8 md:ml-44">
         Personal Infos
       </h1>
-      <div className="flex justify-end">
-        <div className="flex flex-col ml-32">
+      <form
+        className="flex flex-col md:flex-row justify-center md:ml-[20%]"
+        onSubmit={handleSubmit(onSubmit)}
+      >
+        <div className="flex flex-col ">
           <input
             type="text"
-            className="w-46 text-white  h-10 mb-4  px-6 rounded-full focus:outline-none bg-[#3B2E86]"
+            className="w-full md:w-72 text-white h-10 mb-4 px-6 rounded-full focus:outline-none bg-[#3B2E86]"
             placeholder="First Name"
+            {...register("firstName")}
           />
           <input
             type="text"
-            className="w-46 text-white h-10 mb-4 px-6 rounded-full focus:outline-none bg-[#3B2E86]"
+            className="w-full md:w-72 text-white h-10 mb-4 px-6 rounded-full focus:outline-none bg-[#3B2E86]"
             placeholder="Phone Number"
+            {...register("phoneNumber")}
           />
           <input
             type="text"
-            className="w-46 text-white h-10 mb-4 px-6 rounded-full focus:outline-none bg-[#3B2E86]"
-            placeholder="Adress"
+            className="w-full md:w-72 text-white h-10 mb-4 px-6 rounded-full focus:outline-none bg-[#3B2E86]"
+            placeholder="Address"
+            {...register("address")}
           />
           <input
             type="text"
-            className="w-46 text-white h-10 mb-4 px-6 rounded-full focus:outline-none bg-[#3B2E86]"
-            placeholder="Code Postal"
+            className="w-fullmd:w-72 text-white h-10 mb-4 px-6 rounded-full focus:outline-none bg-[#3B2E86]"
+            placeholder="Postal Code"
+            {...register("postalCode")}
           />
           <input
             type="text"
-            className="w-46 text-white h-10 mb-4 px-6 rounded-full focus:outline-none bg-[#3B2E86]"
+            className="w-full md:w-72 text-white h-10 mb-4 px-6 rounded-full focus:outline-none bg-[#3B2E86]"
             placeholder="City"
+            {...register("city")}
           />
           <input
             type="text"
-            className="w-46 text-white h-10 mb-4 px-6 rounded-full focus:outline-none bg-[#3B2E86]"
+            className="w-full md:w-72 text-white h-10 mb-4 px-6 rounded-full focus:outline-none bg-[#3B2E86]"
             placeholder="Date Of Birth"
+            {...register("dateOfBirth")}
           />
           <input
-            type="text"
-            className="w-46 text-white h-10 mb-4 px-6 rounded-full focus:outline-none bg-[#3B2E86]"
+            type="password"
+            className="w-full md:w-72 text-white h-10 mb-4 px-6 rounded-full focus:outline-none bg-[#3B2E86]"
             placeholder="Password"
+            {...register("password")}
           />
         </div>
         <div className="flex flex-col">
           <input
             type="text"
-            className="w-46 text-white h-10 mb-4 ml-4 px-6 rounded-full focus:outline-none bg-[#3B2E86]"
+            className="w-full md:w-72 text-white h-10 mb-4 ml-0 md:ml-4 px-6 rounded-full focus:outline-none bg-[#3B2E86]"
             placeholder="Last Name"
+            {...register("lastName")}
           />
           <input
             type="text"
-            className="w-46 text-white h-10 mb-4 ml-4 px-6 rounded-full focus:outline-none bg-[#3B2E86]"
+            className="w-full md:w-72 text-white h-10 mb-4 ml-0 md:ml-4 px-6 rounded-full focus:outline-none bg-[#3B2E86]"
             placeholder="Nationality"
+            {...register("nationality")}
           />
           <input
             type="text"
-            className="w-46 text-white h-10 mb-4 ml-4 px-6 rounded-full focus:outline-none bg-[#3B2E86]"
+            className="w-full md:w-72 text-white h-10 mb-4 ml-0 md:ml-4 px-6 rounded-full focus:outline-none bg-[#3B2E86]"
             placeholder="Gender"
+            {...register("gender")}
           />
           <input
             type="text"
-            className="w-46 text-white h-10 mb-4 ml-4 px-6 rounded-full focus:outline-none bg-[#3B2E86]"
+            className="w-full md:w-72 text-white h-10 mb-4 ml-0 md:ml-4 px-6 rounded-full focus:outline-none bg-[#3B2E86]"
             placeholder="Country"
+            {...register("country")}
           />
           <input
             type="text"
-            className="w-46 text-white h-10 mb-4 ml-4 px-6 rounded-full focus:outline-none bg-[#3B2E86]"
+            className="w-full md:w-72 text-white h-10 mb-4 ml-0 md:ml-4 px-6 rounded-full focus:outline-none bg-[#3B2E86]"
             placeholder="Region"
+            {...register("region")}
           />
           <input
             type="text"
-            className="w-46 text-white h-10 mb-4 ml-4 px-6 rounded-full focus:outline-none bg-[#3B2E86]"
-            placeholder="Adress Mail"
+            className="w-full md:w-72 text-white h-10 mb-4 ml-0 md:ml-4 px-6 rounded-full focus:outline-none bg-[#3B2E86]"
+            placeholder="Address Mail"
+            {...register("addressMail")}
           />
           <input
-            type="text"
-            className="w-46 text-white h-10 mb-12 ml-4 px-6 rounded-full focus:outline-none bg-[#3B2E86]"
+            type="password"
+            className="w-full md:w-72 text-white h-10 mb-12 ml-0 md:ml-4 px-6 rounded-full focus:outline-none bg-[#3B2E86]"
             placeholder="Confirm Password"
+            {...register("confirmPassword")}
           />
         </div>
-      </div>
+      </form>
       <Link to="/upload">
         <button
-          className={`bg-[#642182] text-white font-poppins text-xl  ml-20 py-1 w-64 rounded-full`}
+          className={`bg-[#642182] text-white font-poppins text-xl mt-8 md:ml-44 py-1 px-6 md:px-10 rounded-full `}
         >
           Next Step
         </button>

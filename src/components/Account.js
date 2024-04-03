@@ -21,7 +21,7 @@ const Account = () => {
         aria-label="Sidebar"
       >
         <span className="flex ml-20 text-[#B3BBCA]">DASHBOARD</span>
-        <div class="h-full px-3 py-4 overflow-y-auto  ">
+        <div class="h-full px-5 py-4 overflow-y-auto  ">
           <ul class="space-y-2 font-medium">
             <li>
               <Link
@@ -35,7 +35,7 @@ const Account = () => {
             <li>
               <Link
                 to="/profile"
-                class="flex items-center p-2 text-[#642182] rounded-lg dark:text-white hover:bg-gray-100 hover:text-[#642182] dark:hover:bg-gray-700 group"
+                class="flex items-center p-2 text-[#642182] border-r-8 border-[#642182] rounded-lg dark:text-white bg-[#F8F7FF]  hover:text-[#642182] "
               >
                 <ProfileIcon />
                 <span class="flex-1 ms-3 whitespace-nowrap">My Account</span>

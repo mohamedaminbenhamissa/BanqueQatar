@@ -101,9 +101,9 @@ const DashboardPage = () => {
                 color="blue"
                 ripple="light"
                 size="regular"
-                className="flex items-center"
+                className="flex items-center fixed top-[70%] left-100 right-0"
               >
-                <img src={supportImage} alt="Support" className="w-15 h-15" />
+                <img src={supportImage} alt="Support" className="w-13 h-13" />
               </Button>
             </div>
           </div>

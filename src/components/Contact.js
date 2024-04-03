@@ -21,10 +21,10 @@ const Contact = () => {
         aria-label="Sidebar"
       >
         <span className="flex ml-20 text-[#B3BBCA]">DASHBOARD</span>
-        <div class="h-full px-3 py-4 overflow-y-auto  ">
+        <div class="h-full px-5 py-4 overflow-y-auto  ">
           <ul class="space-y-2 font-medium">
             <li>
-            <Link
+              <Link
                 to="/dashboard"
                 class="flex items-center p-2 text-gray-900 rounded-lg  hover:bg-[#F8F7FF] hover:text-[#642182] dark:hover:bg-gray-700 group"
               >
@@ -33,7 +33,7 @@ const Contact = () => {
               </Link>
             </li>
             <li>
-            <Link
+              <Link
                 to="/profile"
                 class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 hover:text-[#642182] dark:hover:bg-gray-700 group"
               >
@@ -42,16 +42,16 @@ const Contact = () => {
               </Link>
             </li>
             <li>
-            <Link
+              <Link
                 to="/contact"
-                class="flex items-center p-2 text-[#642182] rounded-lg dark:text-white hover:bg-[#F8F7FF] hover:text-[#642182] dark:hover:bg-gray-700 group"
+                class="flex items-center p-2 text-[#642182] rounded-lg  border-r-8 border-[#642182]  bg-[#F8F7FF] hover:text-[#642182] dark:hover:bg-gray-700 group"
               >
                 <ContactIcon class="hover:bg-[#642182]" />
                 <span class="flex-1 ms-3 whitespace-nowrap">Contact Us</span>
               </Link>
             </li>
             <li>
-            <Link
+              <Link
                 to="/settings"
                 class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-[#F8F7FF] hover:text-[#642182] dark:hover:bg-gray-700 group"
               >

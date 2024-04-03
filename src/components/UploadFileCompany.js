@@ -7,7 +7,7 @@ import { ReactComponent as FileIcon } from "../assets/Vector.svg";
 const UploadFileCompany = () => {
   return (
     <div
-      className="w-3/5 h-screen flex flex-col justify-center items-center"
+      className="w-full h-screen flex flex-col justify-center items-center"
       style={{
         backgroundImage: `url(${bgImage})`,
         backgroundSize: "cover",
@@ -15,99 +15,81 @@ const UploadFileCompany = () => {
         backgroundPositionY: "0px",
       }}
     >
-      <h1 className="font-roboto text-xl font-bold text-white ml-16 mt-16 mb-16">
+      <h1 className="font-roboto text-xl md:text-2xl font-bold text-white ml-6 md:ml-16 mt-6 md:mt-16 mb-6 md:mb-16">
         Upload Files
       </h1>
 
-      <div className="flex  items-center">
-        <div className="flex flex-col items-center">
-          <p className=" font-roboto text-white text-lg ml-16 mr-12">
-            Company CR
-          </p>
-        </div>
-        <div className="flex flex-col items-center">
-          <div
-            class="w-[200px] relative border-2 border-gray-300 border-dashed rounded-3xl p-2"
-            id="dropzone"
-          >
-            <input
-              type="file"
-              class="absolute inset-0 w-full h-full opacity-0 z-50"
-            />
-
-            <div class="text-center">
-              <h3 class="mt-2 text-sm font-medium text-gray-900">
-                <label
-                  htmlFor="file-upload"
-                  className="relative cursor-pointer flex items-center"
-                >
-                  <FileIcon className="w-4 h-4 mr-2" />
-                  <span className="text-white text-xs">
-                    add file or drop files here
-                  </span>
-                  <input
-                    id="file-upload"
-                    name="file-upload"
-                    type="file"
-                    className="sr-only"
-                  />
-                </label>
-              </h3>
-            </div>
+      <div className="flex  items-center  md:mb-20 md:mr-12">
+        <p className="font-roboto text-white text-lg  md:ml-14 md:mr-12">
+          Company CR
+        </p>
+        <div className="w-full md:w-[200px] relative border-2 border-gray-300 border-dashed rounded-3xl p-2">
+          <input
+            type="file"
+            className="absolute inset-0 w-full h-full opacity-0 z-50"
+          />
+          <div className="text-center">
+            <h3 className="mt-2 text-sm font-medium text-gray-900">
+              <label
+                htmlFor="file-upload-1"
+                className="relative cursor-pointer flex items-center"
+              >
+                <FileIcon className="w-4 h-4 mr-2" />
+                <span className="text-white text-xs">
+                  Add file or drop files here
+                </span>
+                <input
+                  id="file-upload-1"
+                  name="file-upload-1"
+                  type="file"
+                  className="sr-only"
+                />
+              </label>
+            </h3>
           </div>
         </div>
       </div>
 
-      <div className="flex  items-center mt-20">
-        <div className="flex flex-col items-center">
-          <p className=" font-roboto text-white text-lg  ml-16 mr-12">
-            Company File
-          </p>
-        </div>
-        <div className="flex flex-col items-center">
-          <div
-            class="w-[200px] relative border-2 border-gray-300 border-dashed rounded-3xl p-2"
-            id="dropzone"
-          >
-            <input
-              type="file"
-              class="absolute inset-0 w-full h-full opacity-0 z-50"
-            />
-            <div class="text-center">
-              <h3 class="mt-2 text-sm font-medium text-gray-900">
-                <label
-                  htmlFor="file-upload"
-                  className="relative cursor-pointer flex items-center"
-                >
-                  <FileIcon className="w-4 h-4 mr-2" />
-                  <span className="text-white text-xs">
-                    add file or drop files here
-                  </span>
-                  <input
-                    id="file-upload"
-                    name="file-upload"
-                    type="file"
-                    className="sr-only"
-                  />
-                </label>
-              </h3>
-            </div>
+      <div className="flex  items-center md:mt-6 md:mb-0 md:mr-1">
+        <p className="font-roboto text-white text-lg mb-2 md:ml-6 md:mr-12">
+          Company File
+        </p>
+        <div className="w-full md:w-[200px] relative border-2 border-gray-300 border-dashed rounded-3xl p-2">
+          <input
+            type="file"
+            className="absolute inset-0 w-full h-full opacity-0 z-50"
+          />
+          <div className="text-center">
+            <h3 className="mt-2 text-sm font-medium text-gray-900">
+              <label
+                htmlFor="file-upload-2"
+                className="relative cursor-pointer flex items-center"
+              >
+                <FileIcon className="w-4 h-4 mr-2" />
+                <span className="text-white text-xs">
+                  Add file or drop files here
+                </span>
+                <input
+                  id="file-upload-2"
+                  name="file-upload-2"
+                  type="file"
+                  className="sr-only"
+                />
+              </label>
+            </h3>
           </div>
         </div>
       </div>
-      <div className="mt-20 ml-16 flex">
+
+      <div className="flex items-center mt-6 md:mt-20">
         <Link to="/company">
-          <button
-            className={`bg-white text-[#642182] text-lg font-poppins mr-4 py-1 px-12 rounded-full flex items-center`}
-          >
+          <button className="bg-white text-[#642182] text-lg font-poppins mr-4 py-1 px-6 md:px-12 rounded-full flex items-center">
             <PreviousIcon className="w-4 h-4 mr-2" />
             Previous
           </button>
         </Link>
         <Link to="/login">
-          <button
-            className={`bg-[#642182] text-white font-poppins text-lg py-1 px-16 rounded-full`}
-          >
+          <button className="bg-[#642182] text-white font-poppins text-lg py-1 px-8 md:px-16 rounded-full">
             Register
           </button>
         </Link>

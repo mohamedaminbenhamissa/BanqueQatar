@@ -31,12 +31,12 @@ const ProfilePage = () => {
               <div>
                 <button
                   type="button"
-                  className="relative flex items-center justify-end py-2 px-6 bg-[#30D5C8] rounded-full text-sm focus:outline-none focus:ring-2 focus:ring-white ml-[20px] "
+                  className="relative flex items-center justify-end py-2 px-4 bg-[#30D5C8] rounded-full text-sm focus:outline-none focus:ring-1 focus:ring-white ml-[20px] "
                   aria-expanded="false"
                   aria-haspopup="true"
                 >
                   <Refresh className="ml-1 mr-3" />
-                  <span className="text-xl text-white font-bold">
+                  <span className="text-lg text-white font-bold">
                     Under Review
                   </span>
                 </button>

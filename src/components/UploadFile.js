@@ -6,7 +6,7 @@ import { ReactComponent as PreviousIcon } from "../assets/arrow-left.svg";
 const UploadFile = () => {
   return (
     <div
-      className="w-3/5 h-screen flex flex-col justify-center items-center"
+      className="w-full min-h-screen flex flex-col justify-center items-center"
       style={{
         backgroundImage: `url(${bgImage})`,
         backgroundSize: "cover",
@@ -14,17 +14,17 @@ const UploadFile = () => {
         backgroundPositionY: "0px",
       }}
     >
-      <h1 className="font-roboto text-xl font-bold text-white mt-24 mb-16">
+      <h1 className="font-roboto text-xl md:text-2xl font-bold text-white mt-12 mb-8 md:mb-16">
         Upload Files
       </h1>
 
-      <div className="flex items-center">
-        <div className="flex flex-col items-center">
-          <p className="font-roboto text-white text-lg mr-12">Identity Card</p>
+      <div className="flex flex-col md:flex-row items-center mb-12">
+        <div className="flex flex-col items-center md:mr-12">
+          <p className="font-roboto text-white text-lg">Identity Card</p>
         </div>
         <div className="flex flex-col items-center">
           <div
-            className="w-[200px] relative border-2 border-gray-300 border-dashed rounded-3xl p-6"
+            className="w-full md:w-[200px] relative border-2 border-gray-300 border-dashed rounded-3xl p-4 md:p-6"
             id="dropzone"
           >
             <input
@@ -53,7 +53,7 @@ const UploadFile = () => {
           </div>
         </div>
       </div>
-      <div className="mt-20 ml-16 flex">
+      <div className="mt-8 md:mt-20 ml-4 md:ml-16 flex">
         <Link to="/individual">
           <button
             className={`bg-white text-[#642182] text-lg font-poppins mr-4 py-1 px-12 rounded-full flex items-center`}

@@ -4,20 +4,20 @@ import logo from "../assets/logo.png";
 
 const WhiteGuard = () => {
   return (
-    <div className="w-3/5 h-screen flex flex-col justify-center items-center bg-[#F8F7FF]">
+    <div className="w-full min-h-screen flex flex-col justify-center items-center bg-[#F8F7FF]">
       <div className="flex flex-col items-center">
-        <img src={logo} alt="Logo" className="w-70 h-60" />
-        <div className="mt-28">
+        <img src={logo} alt="Logo" />
+        <div className="mt-10 flex flex-col md:flex-row">
           <Link to="/individual">
             <button
-              className={`bg-white text-[#642182] text-lg font-poppins mr-8 py-1 px-20 rounded-full`}
+              className={`bg-white text-[#642182] text-lg font-poppins mb-2 md:mb-0 md:mr-4 py-1 px-8 rounded-full`}
             >
               Individual
             </button>
           </Link>
           <Link to="/company">
             <button
-              className={`bg-[#642182] text-white font-poppins text-lg py-1 px-20 rounded-full`}
+              className={`bg-[#642182] text-white font-poppins text-lg py-1 px-8 rounded-full`}
             >
               Company
             </button>

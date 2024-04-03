@@ -21,7 +21,7 @@ const Sidebar = () => {
         aria-label="Sidebar"
       >
         <span className="flex ml-20 text-[#B3BBCA]">DASHBOARD</span>
-        <div className="h-full px-3 py-4 overflow-y-auto">
+        <div className="h-full px-5 py-4 overflow-y-auto">
           <ul className="space-y-2 font-medium">
             <li>
               <Link
@@ -57,7 +57,7 @@ const Sidebar = () => {
             <li>
               <Link
                 to="/settings"
-                className="flex items-center p-2 text-[#642182] rounded-lg dark:text-white hover:bg-[#F8F7FF] hover:text-[#642182] dark:hover:bg-gray-700 group"
+                className="flex items-center p-2 text-[#642182] rounded-lg bg-[#F8F7FF]  dark:text-white border-r-8 border-[#642182]"
               >
                 <SettingIcon />
                 <span className="flex-1 ms-3 whitespace-nowrap">Settings</span>

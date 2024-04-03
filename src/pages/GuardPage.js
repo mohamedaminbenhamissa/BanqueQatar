@@ -5,8 +5,12 @@ import WhiteGuard from "../components/WhiteGuard";
 const GuardPage = () => {
   return (
     <div className="flex">
-      <PinkGuard />
-      <WhiteGuard />
+      <div className="basis-[35%] h-[100vh]">
+        <PinkGuard />
+      </div>
+      <div className="basis-[60%] h-[100vh]">
+        <WhiteGuard />
+      </div>
     </div>
   );
 };

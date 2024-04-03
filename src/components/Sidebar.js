@@ -21,12 +21,12 @@ const Sidebar = () => {
         aria-label="Sidebar"
       >
         <span className="flex ml-20 text-[#B3BBCA]">DASHBOARD</span>
-        <div class="h-full px-3 py-4 overflow-y-auto  ">
+        <div class="h-full px-5 py-4 overflow-y-auto  ">
           <ul class="space-y-2 font-medium">
             <li>
               <Link
                 to="/dashboard"
-                class="flex items-center p-2 text-[#642182] rounded-lg  hover:bg-[#F8F7FF] hover:text-[#642182] dark:hover:bg-gray-700 group"
+                class="flex items-center p-2 text-[#642182] rounded-lg  bg-[#F8F7FF] hover:text-[#642182] border-r-8 border-[#642182]"
               >
                 <DashboardIcon className="transition-colors duration-300 ease-in-out group-hover:text-[#642182] dark:group-hover:text-[#642182]" />
                 <span class="ms-3">Dashboard</span>

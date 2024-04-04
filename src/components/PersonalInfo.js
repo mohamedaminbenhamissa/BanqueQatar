@@ -4,7 +4,7 @@ import bgImage from "../assets/Info.png";
 import { useForm } from "react-hook-form";
 
 const PersonalInfo = () => {
-  const { register, handleSubmit, errors } = useForm();
+  const { register, handleSubmit } = useForm();
   const onSubmit = (data) => {
     alert(JSON.stringify(data));
   };

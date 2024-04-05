@@ -3,12 +3,14 @@ import Sidebar from "../components/Sidebar";
 import Navbar from "../components/Navbar";
 import { ReactComponent as Felters } from "../assets/filters.svg";
 import { ReactComponent as Refresh } from "../assets/refresh-square-2.svg";
+import { useTranslation } from "react-i18next";
 import { FaSearch } from "react-icons/fa";
 import { DashboardCards } from "../components/DashboardCards";
 import supportImage from "../assets/support.png";
 import { Button } from "@material-tailwind/react";
 
 const DashboardPage = () => {
+  const { t } = useTranslation();
   return (
     <div className="flex">
       <div className="basis-[16%] h-[100vh] ">

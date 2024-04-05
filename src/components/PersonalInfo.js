@@ -2,9 +2,14 @@ import React from "react";
 import { Link } from "react-router-dom";
 import bgImage from "../assets/Info.png";
 import { useForm } from "react-hook-form";
+import Input from "./Input";
 
 const PersonalInfo = () => {
-  const { register, handleSubmit } = useForm();
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
   const onSubmit = (data) => {
     alert(JSON.stringify(data));
   };
@@ -27,91 +32,119 @@ const PersonalInfo = () => {
         onSubmit={handleSubmit(onSubmit)}
       >
         <div className="flex flex-col ">
-          <input
+          <Input
             type="text"
-            className="w-full md:w-72 text-white h-10 mb-4 px-6 rounded-full focus:outline-none bg-[#3B2E86]"
+            name="firstName"
             placeholder="First Name"
-            {...register("firstName")}
+            register={register}
+            rules={{ required: true }}
+            errors={errors}
           />
-          <input
+          <Input
             type="text"
-            className="w-full md:w-72 text-white h-10 mb-4 px-6 rounded-full focus:outline-none bg-[#3B2E86]"
+            name="phoneNumber"
             placeholder="Phone Number"
-            {...register("phoneNumber")}
+            register={register}
+            rules={{ required: true }}
+            errors={errors}
           />
-          <input
+          <Input
             type="text"
-            className="w-full md:w-72 text-white h-10 mb-4 px-6 rounded-full focus:outline-none bg-[#3B2E86]"
+            name="address"
             placeholder="Address"
-            {...register("address")}
+            register={register}
+            rules={{ required: true }}
+            errors={errors}
           />
-          <input
+          <Input
             type="text"
-            className="w-fullmd:w-72 text-white h-10 mb-4 px-6 rounded-full focus:outline-none bg-[#3B2E86]"
+            name="postalCode"
             placeholder="Postal Code"
-            {...register("postalCode")}
+            register={register}
+            rules={{ required: true }}
+            errors={errors}
           />
-          <input
+          <Input
             type="text"
-            className="w-full md:w-72 text-white h-10 mb-4 px-6 rounded-full focus:outline-none bg-[#3B2E86]"
+            name="city"
             placeholder="City"
-            {...register("city")}
+            register={register}
+            rules={{ required: true }}
+            errors={errors}
           />
-          <input
+          <Input
             type="text"
-            className="w-full md:w-72 text-white h-10 mb-4 px-6 rounded-full focus:outline-none bg-[#3B2E86]"
+            name="dateOfBirth"
             placeholder="Date Of Birth"
-            {...register("dateOfBirth")}
+            register={register}
+            rules={{ required: true }}
+            errors={errors}
           />
-          <input
+          <Input
             type="password"
-            className="w-full md:w-72 text-white h-10 mb-4 px-6 rounded-full focus:outline-none bg-[#3B2E86]"
+            name="password"
             placeholder="Password"
-            {...register("password")}
+            register={register}
+            rules={{ required: true }}
+            errors={errors}
           />
         </div>
-        <div className="flex flex-col">
-          <input
+        <div className="flex flex-col md:ml-14">
+          <Input
             type="text"
-            className="w-full md:w-72 text-white h-10 mb-4 ml-0 md:ml-4 px-6 rounded-full focus:outline-none bg-[#3B2E86]"
+            name="lastName"
             placeholder="Last Name"
-            {...register("lastName")}
+            register={register}
+            rules={{ required: true }}
+            errors={errors}
           />
-          <input
+          <Input
             type="text"
-            className="w-full md:w-72 text-white h-10 mb-4 ml-0 md:ml-4 px-6 rounded-full focus:outline-none bg-[#3B2E86]"
+            name="nationality"
             placeholder="Nationality"
-            {...register("nationality")}
+            register={register}
+            rules={{ required: true }}
+            errors={errors}
           />
-          <input
+          <Input
             type="text"
-            className="w-full md:w-72 text-white h-10 mb-4 ml-0 md:ml-4 px-6 rounded-full focus:outline-none bg-[#3B2E86]"
+            name="gender"
             placeholder="Gender"
-            {...register("gender")}
+            register={register}
+            rules={{ required: true }}
+            errors={errors}
           />
-          <input
+          <Input
             type="text"
-            className="w-full md:w-72 text-white h-10 mb-4 ml-0 md:ml-4 px-6 rounded-full focus:outline-none bg-[#3B2E86]"
+            name="country"
             placeholder="Country"
-            {...register("country")}
+            register={register}
+            rules={{ required: true }}
+            errors={errors}
           />
-          <input
+          <Input
             type="text"
-            className="w-full md:w-72 text-white h-10 mb-4 ml-0 md:ml-4 px-6 rounded-full focus:outline-none bg-[#3B2E86]"
+            name="region"
             placeholder="Region"
-            {...register("region")}
+            register={register}
+            rules={{ required: true }}
+            errors={errors}
           />
-          <input
+          <Input
             type="text"
-            className="w-full md:w-72 text-white h-10 mb-4 ml-0 md:ml-4 px-6 rounded-full focus:outline-none bg-[#3B2E86]"
+            name="addressMail"
             placeholder="Address Mail"
-            {...register("addressMail")}
+            register={register}
+            rules={{ required: true, pattern: /^\S+@\S+$/i }}
+            errors={errors}
           />
-          <input
+          <Input
             type="password"
-            className="w-full md:w-72 text-white h-10 mb-12 ml-0 md:ml-4 px-6 rounded-full focus:outline-none bg-[#3B2E86]"
+            name="confirmPassword"
             placeholder="Confirm Password"
-            {...register("confirmPassword")}
+            register={register}
+            rules={{ required: true }}
+            errors={errors}
           />
         </div>
       </form>

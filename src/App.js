@@ -10,13 +10,10 @@ import SettingPage from "./pages/SettingPage";
 import ContactPage from "./pages/ContactPage";
 import ProfilePage from "./pages/ProfilePage";
 
-
 export default function App() {
   return (
     <div>
       <BrowserRouter>
-       
-
         <Routes>
           <Route index element={<GuardPage />} />
           <Route path="individual" element={<IndividualPage />} />
@@ -25,9 +22,9 @@ export default function App() {
           <Route path="uploadCompany" element={<CompanyUploadPage />} />
           <Route path="login" element={<LoginPage />} />
           <Route path="dashboard" element={<DashboardPage />} />
-          <Route path="settings" element={< SettingPage/>}/>
-          <Route path="contact" element={< ContactPage/>}/>
-          <Route path="profile*" element={< ProfilePage/>}/>
+          <Route path="settings" element={<SettingPage />} />
+          <Route path="contact" element={<ContactPage />} />
+          <Route path="profile*" element={<ProfilePage />} />
         </Routes>
       </BrowserRouter>
     </div>

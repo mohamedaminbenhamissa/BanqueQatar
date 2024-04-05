@@ -26,16 +26,16 @@ const Sidebar = () => {
             <li>
               <Link
                 to="/dashboard"
-                className="flex items-center p-2 text-gray-900 rounded-lg  hover:bg-[#F8F7FF] hover:text-[#642182] dark:hover:bg-gray-700 group"
+                className="flex items-center p-2 text-gray-900 rounded-lg  hover:bg-[#F8F7FF] hover:text-[#642182]"
               >
-                <DashboardIcon className="transition-colors duration-300 ease-in-out group-hover:text-[#642182] dark:group-hover:text-[#642182]" />
+                <DashboardIcon className="transition-colors duration-300 ease-in-out group-hover:text-[#642182] " />
                 <span className="ms-3">Dashboard</span>
               </Link>
             </li>
             <li>
               <Link
                 to="/profile"
-                className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 hover:text-[#642182] dark:hover:bg-gray-700 group"
+                className="flex items-center p-2 text-gray-900 rounded-lg hover:bg-gray-100 hover:text-[#642182] "
               >
                 <ProfileIcon />
                 <span className="flex-1 ms-3 whitespace-nowrap">
@@ -46,7 +46,7 @@ const Sidebar = () => {
             <li>
               <Link
                 to="/contact"
-                className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-[#F8F7FF] hover:text-[#642182] dark:hover:bg-gray-700 group"
+                className="flex items-center p-2 text-gray-900 rounded-lg  hover:bg-[#F8F7FF] hover:text-[#642182]"
               >
                 <ContactIcon className="hover:bg-[#642182]" />
                 <span className="flex-1 ms-3 whitespace-nowrap">
@@ -57,7 +57,7 @@ const Sidebar = () => {
             <li>
               <Link
                 to="/settings"
-                className="flex items-center p-2 text-[#642182] rounded-lg bg-[#F8F7FF]  dark:text-white border-r-8 border-[#642182]"
+                className="flex items-center p-2 text-[#642182] rounded-lg bg-[#F8F7FF]   border-r-8 border-[#642182]"
               >
                 <SettingIcon />
                 <span className="flex-1 ms-3 whitespace-nowrap">Settings</span>

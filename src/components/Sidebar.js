@@ -28,14 +28,14 @@ const Sidebar = () => {
                 to="/dashboard"
                 class="flex items-center p-2 text-[#642182] rounded-lg  bg-[#F8F7FF] hover:text-[#642182] border-r-8 border-[#642182]"
               >
-                <DashboardIcon className="transition-colors duration-300 ease-in-out group-hover:text-[#642182] dark:group-hover:text-[#642182]" />
+                <DashboardIcon className="transition-colors duration-300 ease-in-out group-hover:text-[#642182]" />
                 <span class="ms-3">Dashboard</span>
               </Link>
             </li>
             <li>
               <Link
                 to="/profile"
-                class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 hover:text-[#642182] dark:hover:bg-gray-700 group"
+                class="flex items-center p-2 text-gray-900 rounded-lg  hover:bg-gray-100 hover:text-[#642182] "
               >
                 <ProfileIcon />
                 <span class="flex-1 ms-3 whitespace-nowrap">My Account</span>
@@ -44,7 +44,7 @@ const Sidebar = () => {
             <li>
               <Link
                 to="/contact"
-                class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-[#F8F7FF] hover:text-[#642182] dark:hover:bg-gray-700 group"
+                class="flex items-center p-2 text-gray-900 rounded-lg hover:bg-[#F8F7FF] hover:text-[#642182] "
               >
                 <ContactIcon class="hover:bg-[#642182]" />
                 <span class="flex-1 ms-3 whitespace-nowrap">Contact Us</span>
@@ -53,7 +53,7 @@ const Sidebar = () => {
             <li>
               <Link
                 to="/settings"
-                class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-[#F8F7FF] hover:text-[#642182] dark:hover:bg-gray-700 group"
+                class="flex items-center p-2 text-gray-900 rounded-lg  hover:bg-[#F8F7FF] hover:text-[#642182] "
               >
                 <SettingIcon />
                 <span class="flex-1 ms-3 whitespace-nowrap">Settings</span>

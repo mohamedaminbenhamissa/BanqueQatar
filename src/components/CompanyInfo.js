@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import bgImage from "../assets/Info.png";
 import { useForm } from "react-hook-form";
+import Input from "./Input";
 
 const CompanyInfo = () => {
   const { register, handleSubmit, errors } = useForm();

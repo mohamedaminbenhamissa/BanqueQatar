@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import bgImage from "../assets/Info.png";
 import { useForm } from "react-hook-form";
+import { useState, useEffect } from "react";
 import Input from "./Input";
 
 const PersonalInfo = () => {
@@ -13,6 +14,23 @@ const PersonalInfo = () => {
   const onSubmit = (data) => {
     alert(JSON.stringify(data));
   };
+  const [firstName, setFirstName] = useState("")
+  const [phoneNumber, setPhoneNumber] = useState("")
+  const [address, setAddress] = useState("")
+  const [postalCode, setPostalCode] = useState("")
+  const [city, setCity] = useState("")
+  const [dateOfBirth, setDateOfBirth] = useState("")
+  const [password, setPassword] = useState("")
+  const [lastName, setLastName] = useState("")
+  const [nationality, setNationality] = useState("")
+  const [gender, setGender] = useState("")
+  const [country, setCountry] = useState("")
+  const [region, setRegion] = useState("")
+  const [addressMail,setAddressMail] = useState("")
+  const [confirmPassword, setConfirmPassword] = useState("")
+
+
+
 
   return (
     <div

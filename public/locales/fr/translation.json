@@ -1,4 +1,5 @@
 {
-    "welcome": "Statut de la demande :",
+    "button.indv": "Individuel",
+    "button.comp": "Entreprise",
     "language": "French"
 }

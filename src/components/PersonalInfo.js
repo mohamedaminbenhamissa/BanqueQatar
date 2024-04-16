@@ -166,7 +166,7 @@ const PersonalInfo = () => {
           />
         </div>
       </form>
-      <Link to="/upload">
+      <Link to="/auth/upload">
         <button
           className={`bg-[#642182] text-white font-poppins text-xl mt-8 md:ml-44 py-1 px-6 md:px-10 rounded-full `}
         >

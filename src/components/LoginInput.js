@@ -14,7 +14,7 @@ const LoginInput = () => {
     const loggedIn = login(email, password);
 
     if (loggedIn) {
-      navigate("/dashboard"); 
+      navigate("/main"); 
     } else {
       alert("Email or password is incorrect.");
     }

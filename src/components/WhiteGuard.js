@@ -11,14 +11,14 @@ const WhiteGuard = () => {
       <div className="flex flex-col items-center">
         <img src={logo} alt="Logo" />
         <div className="mt-10 flex flex-col md:flex-row">
-          <Link to="/individual">
+          <Link to="/auth/individual">
             <button 
               className={`bg-white text-[#642182] text-lg font-poppins mb-2 md:mb-0 md:mr-4 py-1 px-8 rounded-full`}
             >
               {t('button.indv')}
             </button>
           </Link>
-          <Link to="/company">
+          <Link to="/auth/company">
             <button 
               className={`bg-[#642182] text-white font-poppins text-lg py-1 px-8 rounded-full`}
             >

@@ -25,7 +25,7 @@ const Sidebar = () => {
           <ul className="space-y-2 font-medium">
             <li>
               <Link
-                to="/dashboard"
+                to="/main"
                 className="flex items-center p-2 text-gray-900 rounded-lg  hover:bg-[#F8F7FF] hover:text-[#642182]"
               >
                 <DashboardIcon className="transition-colors duration-300 ease-in-out group-hover:text-[#642182] " />
@@ -34,7 +34,7 @@ const Sidebar = () => {
             </li>
             <li>
               <Link
-                to="/profile"
+                to="/main/profile"
                 className="flex items-center p-2 text-gray-900 rounded-lg hover:bg-gray-100 hover:text-[#642182] "
               >
                 <ProfileIcon />
@@ -45,7 +45,7 @@ const Sidebar = () => {
             </li>
             <li>
               <Link
-                to="/contact"
+                to="/main/contact"
                 className="flex items-center p-2 text-gray-900 rounded-lg  hover:bg-[#F8F7FF] hover:text-[#642182]"
               >
                 <ContactIcon className="hover:bg-[#642182]" />
@@ -56,7 +56,7 @@ const Sidebar = () => {
             </li>
             <li>
               <Link
-                to="/settings"
+                to="/main/settings"
                 className="flex items-center p-2 text-[#642182] rounded-lg bg-[#F8F7FF]   border-r-8 border-[#642182]"
               >
                 <SettingIcon />

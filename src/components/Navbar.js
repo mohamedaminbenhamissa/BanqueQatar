@@ -18,13 +18,13 @@ const Navbar = () => {
 
   const getTitle = () => {
     switch (location.pathname) {
-      case "/dashboard":
+      case "/main":
         return "Dashboard";
-      case "/profile":
+      case "/main/profile":
         return "Profile";
-      case "/contact":
+      case "/main/contact":
         return "Contact Us";
-      case "/settings":
+      case "/main/settings":
         return "Settings";
       default:
         return "Dashboard"; 
@@ -33,7 +33,7 @@ const Navbar = () => {
 
   const handleLogout = () => {
     logout(); 
-    navigate("/login"); 
+    navigate("/auth"); 
     
   };
 

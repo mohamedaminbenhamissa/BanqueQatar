@@ -82,13 +82,13 @@ const UploadFileCompany = () => {
       </div>
 
       <div className="flex items-center mt-6 md:mt-20">
-        <Link to="/company">
+        <Link to="/auth/company">
           <button className="bg-white text-[#642182] text-lg font-poppins mr-4 py-1 px-6 md:px-12 rounded-full flex items-center">
             <PreviousIcon className="w-4 h-4 mr-2" />
             Previous
           </button>
         </Link>
-        <Link to="/login">
+        <Link to="/auth">
           <button className="bg-[#642182] text-white font-poppins text-lg py-1 px-8 md:px-16 rounded-full">
             Register
           </button>

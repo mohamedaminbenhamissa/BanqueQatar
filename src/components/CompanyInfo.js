@@ -69,7 +69,7 @@ const CompanyInfo = () => {
         </div>
       </form>
       <div className="flex justify-end">
-        <Link to="/uploadCompany">
+        <Link to="/auth/uploadCompany">
           <button
             className={`bg-[#642182] text-white font-poppins text-xl md:ml-44 py-1 px-8 md:px-20 rounded-full`}
           >

@@ -54,7 +54,7 @@ const UploadFile = () => {
         </div>
       </div>
       <div className="mt-8 md:mt-20 ml-4 md:ml-16 flex">
-        <Link to="/individual">
+        <Link to="/auth/individual">
           <button
             className={`bg-white text-[#642182] text-lg font-poppins mr-4 py-1 px-12 rounded-full flex items-center`}
           >
@@ -62,7 +62,7 @@ const UploadFile = () => {
             Previous
           </button>
         </Link>
-        <Link to="/login">
+        <Link to="/auth">
           <button
             className={`bg-[#642182] text-white font-poppins text-lg py-1 px-16 rounded-full`}
           >

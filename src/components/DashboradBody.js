@@ -9,10 +9,7 @@ const DashboardBody = () => {
           Welcome to Dashboard
         </h1>
         <p className="text-lg text-gray-600">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
-          ultricies semper dui, non vehicula lorem molestie id. Nam facilisis
-          lectus vel sapien vestibulum aliquam. Pellentesque habitant morbi
-          tristique senectus et netus et malesuada fames ac turpis egestas.
+       
         </p>
       </div>
     </div>

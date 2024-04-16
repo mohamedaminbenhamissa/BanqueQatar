@@ -11,9 +11,11 @@ import { Button } from "@material-tailwind/react";
 
 const DashboardPage = () => {
   const { t } = useTranslation();
+  console.log("local storage",localStorage.getItem("currentUser"));
+
   return (
     <div className="flex">
-      <div className="basis-[16%] h-[100vh] ">
+    <div className="basis-[16%] h-[100vh]">
         <Sidebar />
       </div>
       <div className="basis-[82%] ">
@@ -25,12 +27,12 @@ const DashboardPage = () => {
             </span>
             <button
               type="button"
-              className="relative flex items-center justify-end px-6 bg-white rounded-full text-sm focus:outline-none focus:ring-2 focus:ring-white ml-[20px] "
+              className="relative flex items-center justify-end px-4 bg-white rounded-full text-sm focus:outline-none focus:ring-2 focus:ring-white ml-[20px] "
               aria-expanded="false"
               aria-haspopup="true"
             >
               <Refresh className="ml-1 mr-2" />
-              <span className="text-xl text-[#30D5C8] font-bold">
+              <span className="text-lg text-[#30D5C8] font-bold">
                 Under Review
               </span>
             </button>
@@ -103,7 +105,7 @@ const DashboardPage = () => {
                 color="blue"
                 ripple="light"
                 size="regular"
-                className="flex items-center fixed top-[70%] left-100 right-0"
+                className="flex items-center fixed top-[60%] left-100 right-0"
               >
                 <img src={supportImage} alt="Support" className="w-13 h-13" />
               </Button>

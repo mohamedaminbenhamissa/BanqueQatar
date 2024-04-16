@@ -1,12 +1,20 @@
 import React from "react";
 import { ReactComponent as Refresh } from "../assets/refresh-squar.svg";
 import { ReactComponent as Edit } from "../assets/edit.svg";
-
+import { useAuth } from "../context/AuthContext";
 import Document from "../assets/Document.png";
 import Account from "../components/Account";
 import Navbar from "../components/Navbar";
 
 const ProfilePage = () => {
+  const { currentUser, logout } = useAuth();
+
+  const getUsername = () => {
+    return currentUser ? currentUser.name : "Unknown User";
+  };
+  const getemailUser = () => {
+    return currentUser ? currentUser.email : "unknown Email"
+  }
   return (
     <div className="flex">
       <div className="basis-[16%] h-[100vh]">
@@ -24,14 +32,14 @@ const ProfilePage = () => {
                   alt="User Avatar"
                 />
                 <div className="flex flex-col">
-                  <span className="text-xl font-bold">Ahmad Ali Abdallah</span>
-                  <span className="text-sm">Ahmadaliabdallah@gmail.com</span>
+                  <span className="text-xl font-bold">{getUsername()}</span>
+                  <span className="text-sm">{getemailUser()}</span>
                 </div>
               </div>
               <div>
                 <button
                   type="button"
-                  className="relative flex items-center justify-end py-2 px-4 bg-[#30D5C8] rounded-full text-sm focus:outline-none focus:ring-1 focus:ring-white ml-[20px] "
+                  className="relative flex items-center justify-end py-1 px-3 bg-[#30D5C8] rounded-full text-sm focus:outline-none focus:ring-1 focus:ring-white ml-[20px] "
                   aria-expanded="false"
                   aria-haspopup="true"
                 >

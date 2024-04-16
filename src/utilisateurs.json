@@ -7,12 +7,17 @@
     {
       "email": "test2@gmail.com",
       "password": "password2",
-      "nom": "User 2"
+      "name": "User 2"
     },
     {
-      "email": "utilisateur3@gmail.com",
+      "email": "test3@gmail.com",
       "password": "password3",
-      "nom": "User 3"
+      "name": "User 3"
+    },
+    {
+      "email": "test4@gmail.com",
+      "password": "password4",
+      "name":"User 4"
     }
   ]
   

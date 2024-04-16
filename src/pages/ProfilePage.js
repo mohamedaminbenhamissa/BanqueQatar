@@ -7,7 +7,7 @@ import Account from "../components/Account";
 import Navbar from "../components/Navbar";
 
 const ProfilePage = () => {
-  const { currentUser, logout } = useAuth();
+  const { currentUser } = useAuth();
 
   const getUsername = () => {
     return currentUser ? currentUser.name : "Unknown User";

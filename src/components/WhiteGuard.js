@@ -15,14 +15,14 @@ const WhiteGuard = () => {
             <button 
               className={`bg-white text-[#642182] text-lg font-poppins mb-2 md:mb-0 md:mr-4 py-1 px-8 rounded-full`}
             >
-              Individual
+              {t('button.indv')}
             </button>
           </Link>
           <Link to="/company">
             <button 
               className={`bg-[#642182] text-white font-poppins text-lg py-1 px-8 rounded-full`}
             >
-              Company
+              {t('button.comp')}
             </button>
           </Link>
         </div>

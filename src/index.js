@@ -2,18 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
-import French from './lang/fr.json';
-import English from './lang/en.json';
 import reportWebVitals from './reportWebVitals';
-
-const locale = navigator.language;
-let lang;
-if (locale==="en") {
-   lang = English;
-} else {
-       lang = French;
-
-}
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

@@ -1,23 +1,21 @@
 [
+  
     {
-      "email": "test1@gmail.com",
-      "password": "password1",
-      "name": "User 1"
-    },
-    {
-      "email": "test2@gmail.com",
-      "password": "password2",
-      "name": "User 2"
-    },
-    {
-      "email": "test3@gmail.com",
-      "password": "password3",
-      "name": "User 3"
-    },
-    {
-      "email": "test4@gmail.com",
-      "password": "password4",
-      "name":"User 4"
+      "firstName": "Mohamed Amine",
+      "lastName": "Ben Hamissa",
+      "phoneNumber" : "53853190",
+      "nationality" : "Tunisian",
+      "country" : "Tunisia",
+      "region" : "Sahel",
+      "dateOfBirth": "08/10/1997",
+      "adress" : "kalaa Sghira",
+      "gender": "Male",
+      "email" : "test1@gmail.com",
+      "postalCode": "4021",
+      "city": "Sousse",
+      "password" : "password1",
+      "confirmPassword" : "password1"
     }
+
   ]
   

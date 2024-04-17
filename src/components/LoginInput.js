@@ -2,21 +2,34 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import bgImage from "../assets/bg.png";
 import { useAuth } from "../context/AuthContext";
+import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const LoginInput = () => {
   const { login } = useAuth();
   const navigate = useNavigate(); 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  
+  const [error, setError] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
 
   const handleLogin = () => {
+    if (!email) {
+      setError("Email cannot be empty.");
+      return;
+    }
+
+    if (!password) {
+      setError("Password cannot be empty.");
+      return;
+    }
+
     const loggedIn = login(email, password);
 
     if (loggedIn) {
       navigate("/main"); 
     } else {
-      alert("Email or password is incorrect.");
+      setError("Email or password is incorrect.");
     }
   };
   return (
@@ -46,14 +59,25 @@ const LoginInput = () => {
           value={email}
           onChange={(e) => setEmail(e.target.value)}
         />
+      
+       
+      </div>
+      <div className="w-3/5 flex flex-col ml-12 relative ">
         <input
-          type="password"
-          className="  w-full text-white py-2 p-4 mb-[4%]   rounded-full focus:outline-none bg-[#3B2E86]"
+          type={showPassword ? "text" : "password"}
+          className="w-full text-white py-2 p-4 mb-[4%] rounded-full focus:outline-none bg-[#3B2E86]"
           placeholder="Password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
+        <FontAwesomeIcon
+          icon={showPassword ? faEyeSlash : faEye}
+          className="absolute mt-[2.5%]  right-4 text-white cursor-pointer"
+          onClick={() => setShowPassword(!showPassword)}
+        />
+        {error && <p className="text-red-500">{error}</p>}
       </div>
+
 
       <div className="w-3/5 ml-12">
         <button

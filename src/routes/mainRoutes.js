@@ -5,6 +5,7 @@ import SettingPage from "../pages/SettingPage";
 import ContactPage from "../pages/ContactPage";
 import ProfilePage from "../pages/ProfilePage";
 import ProtectedRoute from "../ProtectedRoute";
+import CompanyProfilePage from "../pages/CompanyProfilePage"
 
 const MainRoutes = () => {
   return (
@@ -14,6 +15,7 @@ const MainRoutes = () => {
         <Route path="settings" element={<SettingPage />} />
         <Route path="contact" element={<ContactPage />} />
         <Route path="profile" element={<ProfilePage />} />
+        <Route path="company" element={<CompanyProfilePage />} />
       </Route>
     </Routes>
   );

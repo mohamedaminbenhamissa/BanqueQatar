@@ -11,7 +11,7 @@ export function DashboardCards({ title, date, content }) {
           <Typography
             variant="body2"
             style={{ color: "#979797" }}
-            className="mb-1 mr-3"
+            className="mb-1 mr-3 mt-[2%]"
           >
             {date}
           </Typography>

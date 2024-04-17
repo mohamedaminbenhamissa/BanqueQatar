@@ -8,7 +8,9 @@ import LoginPage from "../pages/LoginPage";
 
 const AuthRoutes = () => {
   return (
+    
     <Routes>
+      
       <Route path="individual" element={<IndividualPage />} />
       <Route path="company" element={<CompanyPage />} />
       <Route path="upload" element={<UploadPage />} />

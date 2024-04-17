@@ -3,6 +3,7 @@ import Contact from "../components/Contact";
 import { ReactComponent as Felters } from "../assets/filters.svg";
 import { ReactComponent as Refresh } from "../assets/refresh-square-2.svg";
 import { FaSearch } from "react-icons/fa";
+import TextField from "@mui/material/TextField";
 import Navbar from "../components/Navbar";
 
 const ContactPage = () => {
@@ -40,11 +41,17 @@ const ContactPage = () => {
                 className="w-full text-black  h-10 mb-4  px-6 rounded-full focus:outline-none bg-[#F9F9F9]"
                 placeholder="Subject"
               />
-              <input
-                type="text"
-                className="w-full text-black p-24  h-10  px-6 rounded-lg focus:outline-none bg-[#F9F9F9]"
+              <TextField
+                multiline
+                variant="filled"
+                rows={8}
+                className="w-full text-black rounded-2xl px-6 focus:outline-none bg-white"
                 placeholder="Description"
+                InputProps={{
+                  disableUnderline: true, 
+                }}
               />
+              
             </div>
           </div>
         </div>

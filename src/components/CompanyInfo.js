@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import bgImage from "../assets/Info.png";
 import { useForm } from "react-hook-form";
 import Input from "./Input";
+import { ReactComponent as PreviousIcon } from "../assets/arrow-left.svg";
 
 const CompanyInfo = () => {
   const { register, handleSubmit, errors } = useForm();
@@ -68,10 +69,18 @@ const CompanyInfo = () => {
           />
         </div>
       </form>
-      <div className="flex justify-end">
+      <div className="flex mt-4 ml-[20%] flex-row md:flex-column">
+        <Link to="/">
+          <button
+            className={`bg-white text-[#642182] text-lg font-poppins mr-4 py-1 px-12 rounded-full flex items-center`}
+          >
+            <PreviousIcon className="w-4 h-4 mr-2" />
+            Previous
+          </button>
+        </Link>
         <Link to="/auth/uploadCompany">
           <button
-            className={`bg-[#642182] text-white font-poppins text-xl md:ml-44 py-1 px-8 md:px-20 rounded-full`}
+            className={`bg-[#642182] text-white font-poppins text-lg py-1 px-16 rounded-full`}
           >
             Next Step
           </button>

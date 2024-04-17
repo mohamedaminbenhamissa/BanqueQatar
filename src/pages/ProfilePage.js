@@ -1,20 +1,44 @@
 import React from "react";
 import { ReactComponent as Refresh } from "../assets/refresh-squar.svg";
 import { ReactComponent as Edit } from "../assets/edit.svg";
+import { useState, useEffect } from "react";
 import { useAuth } from "../context/AuthContext";
 import Document from "../assets/Document.png";
 import Account from "../components/Account";
 import Navbar from "../components/Navbar";
 
+
 const ProfilePage = () => {
   const { currentUser } = useAuth();
 
   const getUsername = () => {
-    return currentUser ? currentUser.name : "Unknown User";
+    return currentUser ? currentUser.firstName : "Unknown User";
   };
   const getemailUser = () => {
     return currentUser ? currentUser.email : "unknown Email"
   }
+  const [userData, setUserData] = useState([]);
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch("../utilisateurs.json"); 
+        if (!response.ok) {
+          throw new Error("Failed to fetch data");
+        }
+        const data = await response.json();
+        setUserData(data);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+  
+    fetchData();
+  }, []);
+  
+  
+  console.log("userData:", userData); 
+
+ 
   return (
     <div className="flex">
       <div className="basis-[16%] h-[100vh]">
@@ -54,7 +78,7 @@ const ProfilePage = () => {
           <div className="bg-white p-8 rounded-lg w-full mt-[2%] ">
             <div className="flex justify-between">
               <div className="relative flex items-center">
-                <span className="text-xl font-bold text-[#642182]">
+                <span className="text-lg font-bold text-[#642182]">
                   Personal Infos
                   <hr className="border-t border-gray-200 my-4 w-[850%]" />
                 </span>
@@ -84,7 +108,7 @@ const ProfilePage = () => {
                       First Name:
                     </dt>
                     <dd class="mt-1 text-sm text-gray-900 font-semibold sm:mt-0 sm:col-span-2">
-                      Ahmed Ali
+                      {currentUser.firstName}
                     </dd>
                   </div>
                   <div class="py-2 sm:py-2 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
@@ -92,7 +116,7 @@ const ProfilePage = () => {
                       Last Name:
                     </dt>
                     <dd class="mt-1 text-sm text-gray-900 font-semibold sm:mt-0 sm:col-span-2">
-                      Abdallah
+                    {currentUser.lastName}
                     </dd>
                   </div>
                   <div class="py-3 sm:py-2 sm:grid sm:grid-cols-3 sm:gap-3 sm:px-6">
@@ -100,7 +124,7 @@ const ProfilePage = () => {
                       Phone number:
                     </dt>
                     <dd class="mt-1 text-sm text-gray-900 font-semibold sm:mt-0 sm:col-span-2">
-                      (123) 456-7890
+                      {currentUser.phoneNumber}
                     </dd>
                   </div>
                   <div class="py-3 sm:py-2 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
@@ -108,7 +132,7 @@ const ProfilePage = () => {
                       Nationality:
                     </dt>
                     <dd class="mt-1 text-sm text-gray-900 font-semibold sm:mt-0 sm:col-span-2">
-                      Qatari
+                      {currentUser.nationality}
                     </dd>
                   </div>
                   <div class="py-3 sm:py-2 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
@@ -116,13 +140,13 @@ const ProfilePage = () => {
                       Country::
                     </dt>
                     <dd class="mt-1 text-sm text-gray-900 font-semibold sm:mt-0 sm:col-span-2">
-                      Qatar
+                      {currentUser.country}
                     </dd>
                   </div>
                   <div class="py-3 sm:py-2 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
                     <dt class="text-sm font-medium text-[#C4D0E8]">Region:</dt>
                     <dd class="mt-1 text-sm text-gray-900 font-semibold sm:mt-0 sm:col-span-2">
-                      Doha
+                      {currentUser.region}
                     </dd>
                   </div>
                 </dl>
@@ -132,19 +156,19 @@ const ProfilePage = () => {
                       Date of Birth:
                     </dt>
                     <dd class="mt-1 text-sm text-gray-900 font-semibold sm:mt-0 sm:col-span-2">
-                      05/28/1985
+                      {currentUser.dateOfBirth}
                     </dd>
                   </div>
                   <div class="py-2 sm:py-2 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
                     <dt class="text-sm font-medium text-[#C4D0E8]">Adress:</dt>
                     <dd class="mt-1 text-sm text-gray-900 font-semibold sm:mt-0 sm:col-span-2">
-                      JTL Cluster w, lotus tower , apt.1253
+                      {currentUser.adress}
                     </dd>
                   </div>
                   <div class="py-3 sm:py-2 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
                     <dt class="text-sm font-medium text-[#C4D0E8]">Gender:</dt>
                     <dd class="mt-1 text-sm text-gray-900 font-semibold sm:mt-0 sm:col-span-2">
-                      Male
+                      {currentUser.gender}
                     </dd>
                   </div>
                   <div class="py-3 sm:py-2 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
@@ -152,7 +176,7 @@ const ProfilePage = () => {
                       Adress Mail:
                     </dt>
                     <dd class="mt-1 text-sm text-gray-900 font-semibold sm:mt-0 sm:col-span-2">
-                      Ahmadaliabdallah@gmail.com
+                      {currentUser.email}
                     </dd>
                   </div>
                   <div class="py-3 sm:py-2 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
@@ -160,13 +184,13 @@ const ProfilePage = () => {
                       Postal Code:
                     </dt>
                     <dd class="mt-1 text-sm text-gray-900 font-semibold sm:mt-0 sm:col-span-2">
-                      0000
+                      {currentUser.postalCode}
                     </dd>
                   </div>
                   <div class="py-3 sm:py-2 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
                     <dt class="text-sm font-medium text-[#C4D0E8]">City:</dt>
                     <dd class="mt-1 text-sm text-gray-900 font-semibold sm:mt-0 sm:col-span-2">
-                      Doha
+                      {currentUser.city}
                     </dd>
                   </div>
                 </dl>

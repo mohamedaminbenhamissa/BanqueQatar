@@ -13,7 +13,7 @@ const Navbar = () => {
   const { currentUser, logout } = useAuth();
   const navigate = useNavigate(); 
   const getUsername = () => {
-    return currentUser ? currentUser.name : "Unknown User";
+    return currentUser ? currentUser.firstName : "Unknown User";
   };
 
   const getTitle = () => {

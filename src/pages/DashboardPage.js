@@ -8,6 +8,7 @@ import { FaSearch } from "react-icons/fa";
 import { DashboardCards } from "../components/DashboardCards";
 import supportImage from "../assets/support.png";
 import { Button } from "@material-tailwind/react";
+import { Link } from "react-router-dom";
 
 const DashboardPage = () => {
   const { t } = useTranslation();
@@ -38,7 +39,7 @@ const DashboardPage = () => {
             </button>
           </div>
           <div className="flex items-center ml-[2%] mt-4">
-            <span className="font-poppins text-xl text-black font-bold">
+            <span className="font-poppins text-lg text-black font-bold">
               Task Compliance:
             </span>
           </div>
@@ -101,14 +102,16 @@ const DashboardPage = () => {
               />
             </div>
             <div className="flex justify-end">
-              <Button
+            <Link to="/main/contact">
+              <button
                 color="blue"
                 ripple="light"
                 size="regular"
                 className="flex items-center fixed top-[60%] left-100 right-0"
               >
                 <img src={supportImage} alt="Support" className="w-13 h-13" />
-              </Button>
+              </button>
+              </Link>
             </div>
           </div>
         </div>

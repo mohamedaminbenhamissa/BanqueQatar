@@ -4,6 +4,7 @@ import bgImage from "../assets/Info.png";
 import { useForm } from "react-hook-form";
 import { useState, useEffect } from "react";
 import Input from "./Input";
+import { ReactComponent as PreviousIcon } from "../assets/arrow-left.svg";
 
 const PersonalInfo = () => {
   const {
@@ -12,7 +13,7 @@ const PersonalInfo = () => {
     formState: { errors },
   } = useForm();
   const onSubmit = (data) => {
-    alert(JSON.stringify(data));
+    console.log(data);
   };
   const [firstName, setFirstName] = useState("")
   const [phoneNumber, setPhoneNumber] = useState("")
@@ -55,15 +56,16 @@ const PersonalInfo = () => {
             name="firstName"
             placeholder="First Name"
             register={register}
-            rules={{ required: true }}
+            rules={{ required: "First name is required" }}
             errors={errors}
+            
           />
           <Input
             type="text"
             name="phoneNumber"
             placeholder="Phone Number"
             register={register}
-            rules={{ required: true }}
+            rules={{ required: "Phone Number is required" }}
             errors={errors}
           />
           <Input
@@ -71,7 +73,7 @@ const PersonalInfo = () => {
             name="address"
             placeholder="Address"
             register={register}
-            rules={{ required: true }}
+            rules={{ required: "Address is required" }}
             errors={errors}
           />
           <Input
@@ -79,7 +81,7 @@ const PersonalInfo = () => {
             name="postalCode"
             placeholder="Postal Code"
             register={register}
-            rules={{ required: true }}
+            rules={{ required: "Postal Code is required" }}
             errors={errors}
           />
           <Input
@@ -87,7 +89,7 @@ const PersonalInfo = () => {
             name="city"
             placeholder="City"
             register={register}
-            rules={{ required: true }}
+            rules={{ required: "City is required" }}
             errors={errors}
           />
           <Input
@@ -95,7 +97,7 @@ const PersonalInfo = () => {
             name="dateOfBirth"
             placeholder="Date Of Birth"
             register={register}
-            rules={{ required: true }}
+            rules={{ required: "Date Of Birth is required" }}
             errors={errors}
           />
           <Input
@@ -103,7 +105,7 @@ const PersonalInfo = () => {
             name="password"
             placeholder="Password"
             register={register}
-            rules={{ required: true }}
+            rules={{ required: "Password is required" }}
             errors={errors}
           />
         </div>
@@ -113,7 +115,7 @@ const PersonalInfo = () => {
             name="lastName"
             placeholder="Last Name"
             register={register}
-            rules={{ required: true }}
+            rules={{ required: "Last Name is required" }}
             errors={errors}
           />
           <Input
@@ -121,7 +123,7 @@ const PersonalInfo = () => {
             name="nationality"
             placeholder="Nationality"
             register={register}
-            rules={{ required: true }}
+            rules={{ required: "Nationality is required" }}
             errors={errors}
           />
           <Input
@@ -129,7 +131,7 @@ const PersonalInfo = () => {
             name="gender"
             placeholder="Gender"
             register={register}
-            rules={{ required: true }}
+            rules={{ required: "Gender is required" }}
             errors={errors}
           />
           <Input
@@ -137,7 +139,7 @@ const PersonalInfo = () => {
             name="country"
             placeholder="Country"
             register={register}
-            rules={{ required: true }}
+            rules={{ required: "Country is required" }}
             errors={errors}
           />
           <Input
@@ -145,7 +147,7 @@ const PersonalInfo = () => {
             name="region"
             placeholder="Region"
             register={register}
-            rules={{ required: true }}
+            rules={{ required: "Region is required" }}
             errors={errors}
           />
           <Input
@@ -153,7 +155,7 @@ const PersonalInfo = () => {
             name="addressMail"
             placeholder="Address Mail"
             register={register}
-            rules={{ required: true, pattern: /^\S+@\S+$/i }}
+            rules={{ required: "Address Mail is required", pattern: /^\S+@\S+$/i }}
             errors={errors}
           />
           <Input
@@ -161,18 +163,28 @@ const PersonalInfo = () => {
             name="confirmPassword"
             placeholder="Confirm Password"
             register={register}
-            rules={{ required: true }}
+            rules={{ required: "Confirm your Password Please" }}
             errors={errors}
           />
         </div>
       </form>
-      <Link to="/auth/upload">
-        <button
-          className={`bg-[#642182] text-white font-poppins text-xl mt-8 md:ml-44 py-1 px-6 md:px-10 rounded-full `}
-        >
-          Next Step
-        </button>
-      </Link>
+      <div className="flex mt-4 ml-[20%] flex-row md:flex-column">
+        <Link to="/">
+          <button
+            className={`bg-white text-[#642182] text-lg font-poppins mr-4 py-1 px-12 rounded-full flex items-center`}
+          >
+            <PreviousIcon className="w-4 h-4 mr-2" />
+            Previous
+          </button>
+        </Link>
+        <Link to="/auth/upload">
+          <button
+            className={`bg-[#642182] text-white font-poppins text-lg py-1 px-16 rounded-full`}
+          >
+            Next Step
+          </button>
+        </Link>
+      </div>
     </div>
   );
 };

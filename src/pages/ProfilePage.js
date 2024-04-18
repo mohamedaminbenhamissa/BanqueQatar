@@ -6,7 +6,7 @@ import { useAuth } from "../context/AuthContext";
 import Document from "../assets/Document.png";
 import Account from "../components/Account";
 import Navbar from "../components/Navbar";
-import EditProfilePage from '../components/EditProfilePage';
+import EditProfilePage from "../components/EditProfilePage";
 
 const ProfilePage = () => {
   const { currentUser } = useAuth();
@@ -19,13 +19,13 @@ const ProfilePage = () => {
     return currentUser ? currentUser.firstName : "Unknown User";
   };
   const getemailUser = () => {
-    return currentUser ? currentUser.email : "unknown Email"
-  }
+    return currentUser ? currentUser.email : "unknown Email";
+  };
   const [userData, setUserData] = useState([]);
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch("../utilisateurs.json"); 
+        const response = await fetch("../utilisateurs.json");
         if (!response.ok) {
           throw new Error("Failed to fetch data");
         }
@@ -35,14 +35,12 @@ const ProfilePage = () => {
         console.error("Error fetching data:", error);
       }
     };
-  
+
     fetchData();
   }, []);
-  
-  
-  console.log("userData:", userData); 
 
- 
+  console.log("userData:", userData);
+
   return (
     <div className="flex">
       <div className="basis-[16%] h-[100vh]">
@@ -122,7 +120,7 @@ const ProfilePage = () => {
                       Last Name:
                     </dt>
                     <dd class="mt-1 text-sm text-gray-900 font-semibold sm:mt-0 sm:col-span-2">
-                    {currentUser.lastName}
+                      {currentUser.lastName}
                     </dd>
                   </div>
                   <div class="py-3 sm:py-2 sm:grid sm:grid-cols-3 sm:gap-3 sm:px-6">
@@ -201,6 +199,11 @@ const ProfilePage = () => {
                   </div>
                 </dl>
                 <dl>
+                  <div>
+                    <span className="text-lg  font-poppins text-black font-bold ">
+                      Doccument
+                    </span>
+                  </div>
                   <div class=" sm:grid">
                     <img
                       className="h-70 w-70 rounded-lg mr-2"

@@ -6,7 +6,7 @@ import { useState, useEffect } from "react";
 import { useAuth } from "../context/AuthContext";
 import InputEdit from "./InputEdit";
 import { ReactComponent as FileIcon } from "../assets/Vector.svg";
-const EditProfilePage = ({ visible, onClose }) => {
+const EditCompanyPage = ({ visible, onClose }) => {
   const { currentUser } = useAuth();
   const {
     register,
@@ -43,7 +43,7 @@ const EditProfilePage = ({ visible, onClose }) => {
       <div className="bg-white p-2 rounded w-100">
         <div className="flex justify-between ">
         <h1 className="font-roboto text-xl font-bold text-black mt-2 mb-4">
-          Edit Personal Infos
+          Edit Company Infos
         </h1>
           <button
             className={` bg-white text-[#642182] text-3XL `}
@@ -76,11 +76,11 @@ const EditProfilePage = ({ visible, onClose }) => {
                 for="first_name"
                 class="block mb-2 ml-6 text-sm font-medium text-gray-900 dark:text-white"
               >
-                First name
+                Commercial Registration No
               </label>
               <InputEdit
                 type="text"
-                name="firstName"
+                name="commercialRegistrationNo"
                 defaultValue={currentUser.firstName}
                 register={register}
                 errors={errors}
@@ -89,120 +89,59 @@ const EditProfilePage = ({ visible, onClose }) => {
                 for="first_name"
                 class="block mb-2 ml-6 text-sm font-medium text-gray-900 dark:text-white"
               >
-                Phone Number
+               Trade Name
               </label>
               <InputEdit
                 type="text"
+                name="tradeName"
+                defaultValue={currentUser.lastName}
+                register={register}
+                errors={errors}
+              />
+              <label class="block mb-2 ml-6 text-sm font-medium text-gray-900 dark:text-white">
+                Legal Form
+              </label>
+              <InputEdit
+                type="text"
+                name="legalForm"
+                defaultValue={currentUser.adress}
+                register={register}
+                errors={errors}
+              />
+             
+            </div>
+            <div className="flex flex-col">
+              <label class="block mb-2 ml-6 text-sm font-medium text-gray-900 dark:text-white">
+                Phone Number
+              </label>
+              <InputEdit
+                type="number"
                 name="phoneNumber"
                 defaultValue={currentUser.phoneNumber}
                 register={register}
                 errors={errors}
               />
               <label class="block mb-2 ml-6 text-sm font-medium text-gray-900 dark:text-white">
-                Address
-              </label>
-              <InputEdit
-                type="text"
-                name="address"
-                defaultValue={currentUser.adress}
-                register={register}
-                errors={errors}
-              />
-              <label class="block mb-2 ml-6 text-sm font-medium text-gray-900 dark:text-white">
-                Postal Code
-              </label>
-              <InputEdit
-                type="text"
-                name="postalCode"
-                defaultValue={currentUser.postalCode}
-                register={register}
-                errors={errors}
-              />
-              <label class="block mb-2 ml-6 text-sm font-medium text-gray-900 dark:text-white">
-                City
-              </label>
-              <InputEdit
-                type="text"
-                name="city"
-                defaultValue={currentUser.city}
-                register={register}
-                errors={errors}
-              />
-              <label class="block mb-2 ml-6 text-sm font-medium text-gray-900 dark:text-white">
-                Date O fBirth
-              </label>
-              <InputEdit
-                type="text"
-                name="dateOfBirth"
-                defaultValue={currentUser.dateOfBirth}
-                register={register}
-                errors={errors}
-              />
-            </div>
-            <div className="flex flex-col">
-              <label class="block mb-2 ml-6 text-sm font-medium text-gray-900 dark:text-white">
-                Last Name
-              </label>
-              <InputEdit
-                type="text"
-                name="lastName"
-                defaultValue={currentUser.lastName}
-                register={register}
-                errors={errors}
-              />
-              <label class="block mb-2 ml-6 text-sm font-medium text-gray-900 dark:text-white">
-                Nationality
+                Adress Mail Professional
               </label>
               <InputEdit
                 type="text"
                 name="nationality"
-                defaultValue={currentUser.nationality}
-                register={register}
-                errors={errors}
-              />
-              <label class="block mb-2 ml-6 text-sm font-medium text-gray-900 dark:text-white">
-                Gender
-              </label>
-              <InputEdit
-                type="text"
-                name="gender"
-                defaultValue={currentUser.gender}
-                register={register}
-                errors={errors}
-              />
-              <label class="block mb-2 ml-6 text-sm font-medium text-gray-900 dark:text-white">
-                Country
-              </label>
-              <InputEdit
-                type="text"
-                name="country"
-                defaultValue={currentUser.country}
-                register={register}
-                errors={errors}
-              />
-              <label class="block mb-2 ml-6 text-sm font-medium text-gray-900 dark:text-white">
-                Region
-              </label>
-              <InputEdit
-                type="text"
-                name="region"
-                defaultValue={currentUser.region}
-                register={register}
-                errors={errors}
-              />
-              <label class="block mb-2 ml-6 text-sm font-medium text-gray-900 dark:text-white">
-                Address Mail
-              </label>
-              <InputEdit
-                type="text"
-                name="addressMail"
                 defaultValue={currentUser.email}
                 register={register}
-                rules={{
-                  pattern: /^\S+@\S+$/i,
-                }}
                 errors={errors}
               />
+              <label class="block mb-2 ml-6 text-sm font-medium text-gray-900 dark:text-white">
+                Adress
+              </label>
+              <InputEdit
+                type="text"
+                name="adrress"
+                defaultValue={currentUser.adress}
+                register={register}
+                errors={errors}
+              />
+              
             </div>
             <div className="flex flex-col">
               <span className="text-lg  font-poppins text-black font-bold ml-6 ">
@@ -238,29 +177,6 @@ const EditProfilePage = ({ visible, onClose }) => {
                   </div>
                 </div>
               </div>
-              <label
-                for="first_name"
-                class="block mb-2 ml-6 text-sm font-medium text-gray-900 dark:text-white"
-              >
-                Expiry Date
-              </label>
-              <InputEdit
-                type="text"
-                name="region"
-                defaultValue="12/12/2025"
-                register={register}
-                errors={errors}
-              />
-              <label class="block mb-2 ml-6 text-sm font-medium text-gray-900 dark:text-white">
-                Number
-              </label>
-              <InputEdit
-                type="text"
-                name="region"
-                defaultValue="0000000000000000000"
-                register={register}
-                errors={errors}
-              />
             </div>
           </div>
         </form>
@@ -276,4 +192,4 @@ const EditProfilePage = ({ visible, onClose }) => {
   );
 };
 
-export default EditProfilePage;
+export default EditCompanyPage;

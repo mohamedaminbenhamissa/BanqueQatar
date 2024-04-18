@@ -3,17 +3,22 @@ import { ReactComponent as Refresh } from "../assets/refresh-squar.svg";
 import { ReactComponent as Edit } from "../assets/edit.svg";
 import { useAuth } from "../context/AuthContext";
 import { ReactComponent as FileIcon } from "../assets/Vector.svg";
+import { useState, useEffect } from "react";
+import Document from "../assets/company.png";
 import Account from "../components/Account";
 import Navbar from "../components/Navbar";
-
+import EditCompanyPage from "../components/EditCompanyPage";
 const ProfilePage = () => {
   const { currentUser } = useAuth();
-
+  const [showEditModal, setShowEditModal] = useState(false);
   const getUsername = () => {
     return currentUser ? currentUser.firstName : "Unknown User";
   };
   const getemailUser = () => {
     return currentUser ? currentUser.email : "unknown Email";
+  };
+  const handleClose = () => {
+    setShowEditModal(false);
   };
   return (
     <div className="flex">
@@ -61,18 +66,17 @@ const ProfilePage = () => {
               </div>
             </div>
             <div className="flex justify-end">
-              <div className="flex items-center">
-                <button
-                  className={`bg-white text-[#642182] text-lg font-poppins border mr-2 py-1 px-8 rounded-full`}
-                >
-                  Cancel
-                </button>
-                <button
-                  className={`bg-[#642182] text-white font-poppins text-lg py-1 px-8 rounded-full`}
-                >
-                  save
-                </button>
-              </div>
+              <button
+                type="button"
+                className="relative flex items-center justify-end py-1 px-3 bg-[#642182] rounded-full text-sm focus:outline-none focus:ring-2 focus:ring-white  "
+                aria-expanded="false"
+                aria-haspopup="true"
+                onClick={() => setShowEditModal(true)}
+              >
+                <Edit className="ml-1 mr-3" />
+                <span className="text-lg text-white ">Edit Profile</span>
+              </button>
+              <EditCompanyPage onClose={handleClose} visible={showEditModal} />
             </div>
             <div>
               <span className="text-lg  font-poppins text-black font-bold ">
@@ -132,40 +136,52 @@ const ProfilePage = () => {
                   </div>
                 </dl>
                 <div>
+                  <div className=" w-full flex justify-between">
                   <span className="text-lg  font-poppins text-black font-bold ">
                     Document
                   </span>
-                 
+                  <div className="text-center">
+                  <h3 className="mt-2 text-sm font-medium text-black">
+                    <label
+                      htmlFor="file-upload-2"
+                      className="relative cursor-pointer flex items-center"
+                    >
+                      <FileIcon className="w-4 h-4 mr-2" />
+                      <span className="text-[#C4D0E8] text-xs">
+                        Add file or drop files here
+                      </span>
+                      <input
+                        id="file-upload-2"
+                        name="file-upload-2"
+                        type="file"
+                        className="sr-only"
+                      />
+                    </label>
+                  </h3>
                 </div>
+
+                  </div>
+                
+                  <div class=" sm:grid">
+                    <img
+                      className="h-70 w-70 rounded-lg mr-2 mt-2"
+                      src={Document}
+                      alt="company"
+                    />
+                  </div>
+                </div>
+               
               </div>
             </div>
             <div className="flex w-full justify-end">
-                    <div className=" flex w-full md:w-[200px] relative border-2 border-gray-300 border-dashed rounded-3xl p-2 justify-center">
-                      <input
-                        type="file"
-                        className="absolute inset-0 w-full h-full opacity-0 z-50"
-                      />
-                      <div className="text-center">
-                        <h3 className="mt-2 text-sm font-medium text-black">
-                          <label
-                            htmlFor="file-upload-2"
-                            className="relative cursor-pointer flex items-center"
-                          >
-                            <FileIcon className="w-4 h-4 mr-2" />
-                            <span className="text-[#C4D0E8] text-xs">
-                              Add file or drop files here
-                            </span>
-                            <input
-                              id="file-upload-2"
-                              name="file-upload-2"
-                              type="file"
-                              className="sr-only"
-                            />
-                          </label>
-                        </h3>
-                      </div>
-                    </div>
-                  </div>
+              <div className=" flex w-full md:w-[200px] relative border-2 border-gray-300 border-dashed rounded-3xl p-2 justify-center">
+                <input
+                  type="file"
+                  className="absolute inset-0 w-full h-full opacity-0 z-50"
+                />
+              
+              </div>
+            </div>
           </div>
         </div>
       </div>

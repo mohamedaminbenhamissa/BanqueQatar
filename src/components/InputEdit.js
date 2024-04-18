@@ -1,7 +1,7 @@
 import React from "react";
 import TextField from "@mui/material/TextField";
 
-const Input = ({ name, register, rules, errors, ...props }) => {
+const InputEdit = ({ name, register, rules, errors, ...props }) => {
   return (
     <div className="mb-4 ml-4">
       <TextField
@@ -10,19 +10,20 @@ const Input = ({ name, register, rules, errors, ...props }) => {
         variant="outlined"
         InputProps={{
           style: {
-            color: "white",
+            color: "black-900",
             textAlign: "center",
-            marginBottom:"1/2"
+            
           },
         }}
         placeholder={props.placeholder}
+        textAlign="center"
         sx={{
           width: "280px",
-          color: "white",
+          color: "black-900",
           height: "40px",
           marginBottom: "8px",
           borderRadius: "20px",
-          backgroundColor: "#3B2E86",
+          backgroundColor: "#F9F9F9",
           "& .MuiOutlinedInput-root .MuiOutlinedInput-notchedOutline": {
             borderColor: "transparent",
           },
@@ -41,4 +42,4 @@ const Input = ({ name, register, rules, errors, ...props }) => {
   );
 };
 
-export default Input;
+export default InputEdit;

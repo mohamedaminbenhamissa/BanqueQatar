@@ -109,7 +109,7 @@ const PersonalInfo = () => {
             errors={errors}
           />
         </div>
-        <div className="flex flex-col md:ml-14">
+        <div className="flex flex-col">
           <Input
             type="text"
             name="lastName"

@@ -6,11 +6,15 @@ import { useAuth } from "../context/AuthContext";
 import Document from "../assets/Document.png";
 import Account from "../components/Account";
 import Navbar from "../components/Navbar";
-
+import EditProfilePage from '../components/EditProfilePage';
 
 const ProfilePage = () => {
   const { currentUser } = useAuth();
+  const [showEditModal, setShowEditModal] = useState(false);
 
+  const handleClose = () => {
+    setShowEditModal(false);
+  };
   const getUsername = () => {
     return currentUser ? currentUser.firstName : "Unknown User";
   };
@@ -90,10 +94,12 @@ const ProfilePage = () => {
                 className="relative flex items-center justify-end py-1 px-3 bg-[#642182] rounded-full text-sm focus:outline-none focus:ring-2 focus:ring-white  "
                 aria-expanded="false"
                 aria-haspopup="true"
+                onClick={() => setShowEditModal(true)}
               >
                 <Edit className="ml-1 mr-3" />
                 <span className="text-lg text-white ">Edit Profile</span>
               </button>
+              <EditProfilePage onClose={handleClose} visible={showEditModal} />
             </div>
             <div>
               <span className="text-lg  font-poppins text-black font-bold ">

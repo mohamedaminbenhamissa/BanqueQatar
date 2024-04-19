@@ -9,11 +9,15 @@ import { DashboardCards } from "../components/DashboardCards";
 import supportImage from "../assets/support.png";
 import { Button } from "@material-tailwind/react";
 import { Link } from "react-router-dom";
-
+import { useState, useEffect } from "react";
+import Chatbox from "../components/Chatbox";
 const DashboardPage = () => {
   const { t } = useTranslation();
   console.log("local storage",localStorage.getItem("currentUser"));
-
+  const [showDialog, setShowDialog] = useState(false);
+  const handleClose = () => {
+    setShowDialog(false);
+  };
   return (
     <div className="flex">
     <div className="basis-[16%] h-[100vh]">
@@ -102,16 +106,17 @@ const DashboardPage = () => {
               />
             </div>
             <div className="flex justify-end">
-            <Link to="/main/contact">
+           
               <button
                 color="blue"
                 ripple="light"
                 size="regular"
                 className="flex items-center fixed top-[60%] left-100 right-0"
+                onClick={() => setShowDialog(true)}
               >
                 <img src={supportImage} alt="Support" className="w-13 h-13" />
               </button>
-              </Link>
+              <Chatbox onClose={handleClose} visible={showDialog} />
             </div>
           </div>
         </div>

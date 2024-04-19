@@ -9,7 +9,7 @@ const Chatbox = ({ visible, onClose }) => {
   if (!visible) return null;
 
   return (
-    <div class="w-80 h-130 flex flex-col  shadow-lg bg-white  fixed top-[30%] left-90 right-0">
+    <div class="w-80 h-130 flex flex-col  shadow-lg bg-white  fixed top-[35%] left-90 right-4">
       <div class="flex items-center justify-between border-b p-2">
         <div class="flex items-center">
           <img class="rounded-full w-10 h-10" src={logo} />
@@ -24,7 +24,7 @@ const Chatbox = ({ visible, onClose }) => {
 
         <div>
           <button
-            class="inline-flex hover:bg-indigo-50 rounded-full p-2"
+            class="inline-flex hover:bg-[#30D5C8] rounded-full p-2"
             type="button"
             onClick={onClose}
           >
@@ -71,17 +71,16 @@ const Chatbox = ({ visible, onClose }) => {
 
         <div class="w-full mx-2">
           <input
-            class="w-full rounded-full border border-gray-200"
+            class="w-full rounded-full border border-gray-200 text-lg px-3"
             type="text"
             defaultValue=""
             placeholder="Aa"
-            autofocus
           />
         </div>
 
         <div>
           <button
-            class="inline-flex hover:bg-indigo-50 rounded-full p-2"
+            class="inline-flex hover:bg-[#30D5C8] rounded-full p-2"
             type="button"
           >
             <svg

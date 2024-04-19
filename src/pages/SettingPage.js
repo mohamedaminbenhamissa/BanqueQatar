@@ -10,7 +10,7 @@ const SettingPage = () => {
       </div>
       <div className="basis-[82%]">
         <Navbar />
-        <div className="bg-[#F9F9F9] h-[80%] p-2 rounded-lg mt-[2%] w-full px-[25px]">
+        <div className="bg-[#F9F9F9] h-[80%] p-2 rounded-lg mt-[2%] w-full px-[8px] sm:px-4 md:px-6 lg:px-8 xl:px-10">
           <div className="mb-6">
             <div className="flex justify-center mt-[1%] md:justify-end">
               <button className="bg-[#642182] text-white font-poppins text-lg py-1 px-8 rounded-full mt-4 md:mt-0">
@@ -35,17 +35,17 @@ const SettingPage = () => {
           </span>
           <div className="flex flex-col  md:flex-row  mt-[2%] md:mt-6 ">
             <input
-              type="text"
+              type="password"
               className="w-full  text-black h-10 mb-4 md:mb-0  md:px-10 rounded-full focus:outline-none bg-white mr-0 md:mr-4"
               placeholder="Old Password"
             />
             <input
-              type="text"
+              type="password"
               className="w-full  text-black h-10 mb-4 md:mb-0  md:px-10 rounded-full focus:outline-none bg-white mr-0 md:mr-4"
               placeholder="New Password"
             />
             <input
-              type="text"
+              type="password"
               className="w-full  text-black h-10 mb-4 md:mb-0  md:px-10 rounded-full focus:outline-none bg-white"
               placeholder="Confirm Password"
             />

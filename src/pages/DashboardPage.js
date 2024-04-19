@@ -25,7 +25,7 @@ const DashboardPage = () => {
       </div>
       <div className="basis-[82%] ">
         <Navbar />
-        <div className="bg-[#F9F9F9] p-2 rounded-lg mt-[2%] w-full px-[8px]">
+        <div className="bg-[#F9F9F9] h-[80%] p-2 rounded-lg mt-[2%] w-full px-[8px]">
           <div className="flex justify-end items-center mr-[2%] mt-[2%]">
             <span className="text-lg text-[#C4D0E8] font-bold">
               Request Application Status:
@@ -49,18 +49,18 @@ const DashboardPage = () => {
           </div>
 
           <div className="bg-white p-8 rounded-lg w-[96%] ml-[2%] mt-[2%]">
-            <div className="flex items-center">
-              <div className="relative">
+            <div className="flex items-center justify-between">
+              <div className="relative w-full">
                 <input
                   type="text"
-                  className="bg-[#F9F9F9] h-[40px] outline-none pl-[40px] w-[950px] rounded-full placeholder:text-[14px] leading-[20px] font-normal"
+                  className="bg-[#F9F9F9] h-10 outline-none px-10 w-[99%] rounded-full placeholder:text-[14px]  font-normal"
                   placeholder="Search"
                 />
                 <FaSearch className="absolute left-3 top-[10px] text-gray-400" />
               </div>
               <button
                 type="button"
-                className="relative flex items-center justify-end bg-[#F9F9F9] rounded-full text-xl py-1 px-5 focus:outline-none focus:ring-2 focus:ring-white ml-4"
+                className="relative flex items-center bg-[#F9F9F9] rounded-full text-xl py-1 px-5 focus:outline-none focus:ring-2 focus:ring-white ml-4"
                 aria-expanded="false"
                 aria-haspopup="true"
               >
@@ -68,8 +68,9 @@ const DashboardPage = () => {
                 <span className="text-lg text-[#C4D0E8] ">Filters</span>
               </button>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-2 text-sm mt-4">
+            <div className="flex flex-wrap justify-between gap-2 mt-2">
               <DashboardCards
+              
                 title="Missing Data"
                 date="Jul 13, 2023 at 1:45 pm"
                 content="We would like to bring to your attention that some crucial data appears to be missing from our records. In order to ensure the completeness and accuracy of our records, we kindly request your assistance in locating the missing data."
@@ -111,7 +112,7 @@ const DashboardPage = () => {
                 color="blue"
                 ripple="light"
                 size="regular"
-                className="flex items-center fixed top-[60%] left-100 right-0"
+                className="flex items-center fixed top-[75%] left-100 right-0"
                 onClick={() => setShowDialog(true)}
               >
                 <img src={supportImage} alt="Support" className="w-13 h-13" />

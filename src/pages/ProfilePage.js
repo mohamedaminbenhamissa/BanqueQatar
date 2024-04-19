@@ -48,7 +48,7 @@ const ProfilePage = () => {
       </div>
       <div className="basis-[82%]">
         <Navbar />
-        <div className="bg-[#F9F9F9] p-2 rounded-lg mt-[2%] w-full px-[25px]">
+        <div className="bg-[#F9F9F9] h-[80%] p-2 rounded-lg mt-[2%] w-full px-[8px] sm:px-4 md:px-6 lg:px-8 xl:px-10">
           <div className="bg-white p-4 rounded-full w-full mt-[2%] ">
             <div className="flex justify-between items-center">
               <div className="relative flex items-center">

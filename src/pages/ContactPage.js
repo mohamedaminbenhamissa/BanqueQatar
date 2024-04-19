@@ -14,8 +14,8 @@ const ContactPage = () => {
       </div>
       <div className="basis-[82%] ">
         <Navbar />
-        <div className="bg-[#F9F9F9] p-12 rounded-lg mt-[2%] w-full px-[25px] ">
-          <div className="bg-white p-11 rounded-lg w-full mt-[2%] ">
+        <div className="bg-[#F9F9F9] h-[80%] p-2 rounded-lg mt-[2%] w-full px-[8px] sm:px-4 md:px-6 lg:px-8 xl:px-10">
+          <div className="bg-white h-[95%] p-11 rounded-lg w-full mt-[2%] ">
             <div className="flex justify-between  ">
               <div className="relative flex items-center ">
                 <span className="text-lg text-black font-bold mr-[20px]">
@@ -45,11 +45,13 @@ const ContactPage = () => {
                 multiline
                 variant="filled"
                 rows={8}
-                className="w-full text-black rounded-2xl px-6 focus:outline-none bg-white"
+                className="w-full text-black  px-6 "
                 placeholder="Description"
                 InputProps={{
                   disableUnderline: true, 
+                  sx: { borderRadius: 5 }
                 }}
+                
               />
               
             </div>

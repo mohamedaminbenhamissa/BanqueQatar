@@ -4,7 +4,7 @@ import userData from "../utilisateurs.json";
 const AuthContext = createContext();
 
 export const useAuth = () => {
-  return useContext(AuthContext);
+  return  useContext(AuthContext);
 };
 
 export const AuthProvider = ({ children }) => {
@@ -30,8 +30,13 @@ export const AuthProvider = ({ children }) => {
     localStorage.removeItem("currentUser"); 
   };
 
+  const isAuthenticated = () => {
+    return currentUser !== null;
+  };
+
   const value = {
     currentUser,
+    isAuthenticated,
     login,
     logout,
   };

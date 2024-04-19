@@ -34,7 +34,7 @@ const LoginInput = () => {
   };
   return (
     <div
-      className="w-3/5 h-screen flex flex-col justify-center items-center"
+      className="w-full h-screen flex flex-col justify-center items-center"
       style={{
         backgroundImage: `url(${bgImage})`,
         backgroundSize: "cover",

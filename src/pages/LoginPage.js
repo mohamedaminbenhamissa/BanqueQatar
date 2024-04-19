@@ -4,9 +4,13 @@ import LoginInput from "../components/LoginInput";
 
 const LoginPage = () => {
   return (
-    <div className="flex">
-      <LoginLogo />
-      <LoginInput />
+    <div className="flex w-full">
+      <div className="basis-[40%]">
+        <LoginLogo />
+      </div>
+      <div className="basis-[60%]">
+        <LoginInput />
+      </div>
     </div>
   );
 };
